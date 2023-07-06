@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bulma is included -->
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/main.min.css' %}">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <section class="section ">
+        <div class="container ">
+            <div class="card">
+                <header class="card-header">
+                    <div class="image is-aligned-center has-max-width is-user-avatar my-2">
+                        <img src="{% static 'dashboard/assets/img/logo.png' %}">
+                        <p class="title my-2">
+                            <span class="icon"><i class="mdi mdi-login"></i></span>
+                            Login
+                        </p>
+                    </div>
+                </header>
+                <div class="card-content">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control has-icons-left ">
+
+<!--{% render_field form.username class+="input is-success" placeholder="Username" %}-->
+                                <input class="input is-success" type="text" placeholder="Username" name="user_id">
+                                <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+
+
+                            </div>
+                            <p class="help is-danger">This username is available</p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left ">
+
+<!--{% render_field form.username class+="input is-success" placeholder="Username" %}-->
+                                <input class="input is-success" type="email" placeholder="Email" name="email">
+                                <span class="icon is-small is-left"><i class="mdi mdi-account"></i></span>
+
+
+                            </div>
+                            <p class="help is-danger">This username is available</p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control has-icons-left">
+<!--{% render_field form.password class+="input is-success" %}-->
+
+                                <input class="input is-success" type="password" placeholder="Password" name="password">
+                                <span class="icon is-small is-left"><i class="mdi mdi-key"></i></span>
+
+
+                            </div>
+                            <p class="help is-danger">This username is available</p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Confirm Password</label>
+                            <div class="control has-icons-left">
+<!--{% render_field form.password class+="input is-success" %}-->
+
+                                <input class="input is-success" type="password" placeholder="Confirm Password" name="cpassword">
+                                <span class="icon is-small is-left"><i class="mdi mdi-key"></i></span>
+
+
+                            </div>
+                            <p class="help is-danger">This username is available</p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <button class="button is-success">
+                                    Login
+                                </button>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer >
+  <div class="content has-text-centered">
+    <p>
+      <strong>©2023 Powered by </strong>  <a href="">Himanshu Chaurasia</a>
+    </p>
+  </div>
+</footer>
+    <!-- Scripts below are for demo only -->
+    <script type="text/javascript" src="{% static 'dashboard/assets/js/main.min.js' %}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="{% static 'dashboard/assets/js/chart.sample.min.js' %}"></script>
+
+    <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+</body>
+
+</html>
